@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import styled from '@emotion/styled';
-
 import { css, keyframes } from '@emotion/react'
 
 

@@ -1,11 +1,10 @@
 import React from 'react';
-import { css } from '@emotion/react'
 import Navegacion from './nav'
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react'
+
 import useScroll from '../hooks/useScroll';
-
-
 
 
 const EnlaceHome = styled(Link)`
@@ -16,19 +15,30 @@ const EnlaceHome = styled(Link)`
     @media (min-width: 768px){
         font-size:2.4rem}
         
-`;
+        `; 
+
+const divHeader= styled.div`
+    top: 0;
+    left: 0;
+    background-color: #000;
+    width: 100%; 
+`
+
+
+
 
 
 const Header = () => {
-
-    const scroll = useScroll(); 
+    
+    const scroll = useScroll();
     
     
-
-      const divHeader = {
+    
+    const divHeader = {
         position: (scroll.currentScrollY>window.innerHeight) ? 'fixed' : 'absolute' 
-    }
-
+     }
+    
+    
     return ( 
         <header
             css={css`
