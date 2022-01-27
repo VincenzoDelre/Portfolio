@@ -17,13 +17,6 @@ const EnlaceHome = styled(Link)`
         
         `; 
 
-const divHeader= styled.div`
-    top: 0;
-    left: 0;
-    background-color: #000;
-    width: 100%; 
-`
-
 
 
 
@@ -34,9 +27,9 @@ const Header = () => {
     
     
     
-    const divHeader = {
-        position: (scroll.currentScrollY>window.innerHeight) ? 'fixed' : 'absolute' 
-     }
+    // const divHeader = {
+    //     position: (scroll.currentScrollY>window.innerHeight) ? 'fixed' : 'absolute' 
+    //  }
     
     
     return ( 
@@ -50,15 +43,16 @@ const Header = () => {
                     padding:5rem}
             `}
         >
-        <nav style={divHeader} css={css`
+        {/* <nav style={divHeader} css={css`
             
             top: 0;
             left: 0;
             background-color: #000;
             width: 100%; 
-                
-            `}>
             
+                
+            `}> */}
+            <nav>
             <div
                 css={css`
                     max-width: 1200px;
