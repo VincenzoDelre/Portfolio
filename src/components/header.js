@@ -25,7 +25,9 @@ const Header = () => {
     
     const scroll = useScroll();
     
-    
+    const divHeader = {
+        position:`fixed`
+    }
     
     // const divHeader = {
     //     position: (scroll.currentScrollY>window.innerHeight) ? 'fixed' : 'absolute' 
@@ -43,7 +45,7 @@ const Header = () => {
                     padding:5rem}
             `}
         >
-        {/* <nav style={divHeader} css={css`
+        <nav style={divHeader} css={css`
             
             top: 0;
             left: 0;
@@ -51,8 +53,8 @@ const Header = () => {
             width: 100%; 
             
                 
-            `}> */}
-            <nav>
+            `}> 
+            
             <div
                 css={css`
                     max-width: 1200px;
