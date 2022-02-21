@@ -97,13 +97,14 @@ const ContenidoInicio = () => {
                         font-family:'Montserrat', sans-serif;
                     }
                     @media(min-width:768px){
+                        color:#fff;
                         overflow: hidden;
                         white-space: nowrap;
                         font-family:'Montserrat', sans-serif;
                         margin: 0 auto;
                         border-right: .12em solid white;
                         letter-spacing: .0.7em;
-                        color:#fff;
+                        
                         animation:
 
                             ${typewriter} 3s steps(40, end),
@@ -111,7 +112,7 @@ const ContenidoInicio = () => {
                         
                         
                     }
-                        `} >Hola, soy Vincenzo :)</h2>
+                        `} >Hi, I'm Vincenzo :)</h2>
 
                     <p css={css`
                         text-align:center;

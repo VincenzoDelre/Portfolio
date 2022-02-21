@@ -165,8 +165,14 @@ export const Contacto = () => {
                 <button 
                   type="submit"
                   css={css`
-                    background-color:white;
-                    border-radius:1rem;`}>Enviar </button>
+                    background-color:#ccc;
+                    color:#fff;
+                    border-radius:1rem;
+                    border:1px solid #aaa;
+                    &:hover{
+                      background-color: #bbb;
+                      border:1px solid #000;
+                    }`}>Enviar </button>
               </div>
 
           </form>

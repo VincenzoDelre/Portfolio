@@ -6,9 +6,10 @@ import styled from '@emotion/styled';
 
 
 const EnlaceHome = styled(Link)`
-    color: #FFF;
+    color: #000;
     text-align: center;
     text-decoration: none;
+    
     font-size: 1rem;
     @media (min-width: 768px){
         font-size:2.4rem}
@@ -25,6 +26,7 @@ const Footer = ({title}) => {
                 position: relative;
                 padding-top: 3rem;
                 z-index: 5;
+                
                 @media (min-width: 768px){
                     padding-top:5rem;
                 }
@@ -33,7 +35,7 @@ const Footer = ({title}) => {
             
             top: 0;
             left: 0;
-            background-color: #000;
+            background-color: #fff;
             width: 100%; 
                 
             `}>
@@ -55,8 +57,8 @@ const Footer = ({title}) => {
                     >
                         <h1 css={css`
                             margin:1rem;
-                            color: #fff;
-                        `}> WEB<span css={css`color:red`}>WU</span> </h1>
+                            color: #000;
+                        `}> WEBS<span css={css`color:red`}>WU</span> </h1>
                     </EnlaceHome>
 
 
@@ -67,17 +69,17 @@ const Footer = ({title}) => {
 
             </div>
         </nav>
-            
-        </footer>
         <p
             css={css`
                 text-align:center;
-                color: #fff;
-                background-color: black;
+                color: #aaa;
+                background-color: #fff;
                 margin: 0;
                 padding: 1rem;
             `}
-        >{title}. Todos los derechos reservados {year} &copy;</p>
+        >{title}. All rights reserved {year} &copy;</p>  
+        </footer>
+        
         </>
     );
 }

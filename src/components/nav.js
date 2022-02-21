@@ -12,7 +12,7 @@ const Nav = styled.nav`
 `;
 
 const NavLink = styled(Link)`
-    color: #FFF;
+    color: #000;
     font-size: 1.6rem;
     font-weight:700;
     line-height: 1rem;
@@ -27,7 +27,7 @@ const NavLink = styled(Link)`
     }
 
     &.pagina-actual {
-        border-bottom: 2px solid #FFF;
+        border-bottom: 2px solid #000;
     }
 
 `;
@@ -39,13 +39,13 @@ const Navegacion = () => {
                 to={'/'}
                 activeClassName="pagina-actual"
             >
-                Inicio
+                Main
             </NavLink>
             <NavLink 
                 to={'/nosotros'}
                 activeClassName="pagina-actual"
             >
-                Sobre Mi
+                About me
             </NavLink>
         </Nav>
      );

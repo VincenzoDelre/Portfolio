@@ -35,13 +35,14 @@ const DiagonalBox = styled.div`
   @media(min-width:768px){
     padding: 2rem;
   }
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0a0a09+0,000000+100 */
-  background: rgb(10,10,9); /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover,  rgba(10,10,9,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover,  rgba(10,10,9,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center,  rgba(10,10,9,1) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a0a09', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,828282+100 */
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 0%, rgba(130,130,130,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(130,130,130,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  rgba(255,255,255,1) 0%,rgba(130,130,130,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#828282',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
+  
   
 
   &:before{
@@ -102,17 +103,29 @@ const ContenidoAbout = () => {
               font-size: 5rem;
             }
           `}
-        >{titulo}</h2>
+        >ABOUT <span css={css`color:red`}>ME</span></h2>
         <DiagonalBox>
           <Content>
             <Contenido>
-              <p>{contenido}</p>
+              
               <GatsbyImage 
                 image={image} 
                 alt='alt per favor' 
                 objectFit='cover'
                 css={css`
                   border-radius:100%;`}/>
+
+              <p
+                css={css`
+                text-align: center;
+                justify-content: center;
+                flex-direction: row;
+                
+                align-items: center;
+                
+                `}
+              
+              >{contenido}</p>
             </Contenido>
 
           </Content>

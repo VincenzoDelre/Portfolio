@@ -23,6 +23,8 @@ import Contacto from "../components/Contacto";
 import useHerramientas from "../hooks/useHerramientas";
 import { HerramientaPreview } from "../components/HerramientaPreview";
 
+// import StyledBackgroundSection from "../components/Background";
+
 
 
 
@@ -78,10 +80,12 @@ const DiagonalBox = styled.div`
   }
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0a0a09+0,000000+100 */
   background: rgb(10,10,9); /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover,  rgba(10,10,9,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover,  rgba(10,10,9,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center,  rgba(10,10,9,1) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a0a09', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,828282+100 */
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 0%, rgba(130,130,130,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(130,130,130,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  rgba(255,255,255,1) 0%,rgba(130,130,130,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#828282',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
   
 
@@ -142,13 +146,17 @@ const IndexPage = () => {
     
     <Layout>
 
+      
+
       <DiagonalBox>
-        <Content>
-          
-          <ContenidoInicio/>
-          
-        </Content>
-      </DiagonalBox>
+        {/* <StyledBackgroundSection> */}
+          <Content>
+            <ContenidoInicio/>
+          </Content>
+        {/* </StyledBackgroundSection> */}
+      </DiagonalBox> 
+
+      
       
       {/* SERVICIOS */}
       
@@ -164,7 +172,7 @@ const IndexPage = () => {
         }
 
       `}>
-        Servici<span css={css`color:red`}>os</span>
+        Servic<span css={css`color:red`}>es</span>
       </h2>
       
 
@@ -187,7 +195,7 @@ const IndexPage = () => {
           font-size: 5rem;
         }
         `}>
-        Proyect<span css={css`color:red`}>os</span>
+        Proyec<span css={css`color:red`}>ts</span>
       </h2>
       <DiagonalBox >
         <Content>
@@ -227,7 +235,8 @@ const IndexPage = () => {
       </h2>
 
       <DiagonalBox>
-        <Content>
+        
+          <Content>
           
           <ListadoProyectos css={css`
             width: 80vw;
@@ -245,7 +254,8 @@ const IndexPage = () => {
               ))}
           </ListadoProyectos> 
 
-      </Content>
+        </Content>
+        
     </DiagonalBox>
 
     
@@ -260,7 +270,7 @@ const IndexPage = () => {
          font-size: 5rem;
        }
      `}>
-       Herramient<span css={css`color:red`}>as</span>
+       Too<span css={css`color:red`}>ls</span>
      </h2>
      <DiagonalBox>
        <Content>
@@ -292,7 +302,7 @@ const IndexPage = () => {
           font-size: 5rem;
         }
       `}>
-        Contac<span css={css`color:red`}>to</span>
+        Conta<span css={css`color:red`}>ct</span>
     </h2>
 
 

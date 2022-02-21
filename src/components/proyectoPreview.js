@@ -86,7 +86,7 @@ const ProyectoPreview = ({proyecto}) => {
                     {titulo}</h3>
                 {/* <p>{contenido}</p> */}
 
-                <Boton to={slug}>Más info...</Boton>
+                <Boton to={slug}>More info...</Boton>
             </div>
 
 

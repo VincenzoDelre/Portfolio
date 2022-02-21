@@ -85,12 +85,13 @@ const LogoPreview = ({logo}) => {
                     css={css`
                         font-size: 2rem;
                         text-align: center;
+                        color:#fff;
                     `}
                 >
                     {titulo}</h3>
                 
 
-                <Boton to={slug}>Más info...</Boton>
+                <Boton to={slug}>More info...</Boton>
             </div>
 
 

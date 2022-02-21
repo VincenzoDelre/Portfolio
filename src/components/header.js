@@ -49,7 +49,7 @@ const Header = () => {
             
             top: 0;
             left: 0;
-            background-color: #000;
+            background-color: #fff;
             width: 100%; 
             
                 
@@ -72,8 +72,8 @@ const Header = () => {
                     >
                         <h1 css={css`
                             margin:1rem;
-                            color: #fff;
-                        `}> WEB<span css={css`color:red`}>WU</span> </h1>
+                            color: #000;
+                        `}> WEBS<span css={css`color:red`}>UW</span> </h1>
                     </EnlaceHome>
 
 

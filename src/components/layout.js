@@ -28,6 +28,14 @@ const Layout = (props) => {
                 body {
                     color: #fff;
                     font-family:'Montserrat', sans-serif;
+                    
+                    display: flex;
+                    justify-content: center;
+                    align-items: space-around;
+                    flex-direction: column;
+                    
+          
+        
                     @media(max-width:767px){
                         font-size:15px;
                         font-size:1.5rem;
@@ -84,6 +92,8 @@ const Layout = (props) => {
             {props.children}
         <Footer 
             title={title}
+            
+            
         />
         </>
      );

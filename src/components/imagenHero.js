@@ -194,11 +194,11 @@ const ImagenHero = () => {
             <Content > 
 
                 <TextoImagen  style={divMov}>
-                    <h1>WEBs 
-                        <span css={css`color:red`}>WU</span>
+                    <h1>WEBS
+                        <span css={css`color:red`}>UW</span>
                     </h1>
-                    <p>Transforma ideas en 
-                        {<span css={css`color:red`}> webs únicas</span>}
+                    <p>Turn ideas into
+                        {<span css={css`color:red`}> unique webs</span>}
                     </p>
                     <LateralDiv>
                     <Boton>
