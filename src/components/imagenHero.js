@@ -260,7 +260,7 @@ const ImagenHero = ({children}) => {
                  
                 </Logo>  
                 <Titulo>
-                    <Base/>
+                    
                 </Titulo>
 
 
