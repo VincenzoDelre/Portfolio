@@ -5,8 +5,10 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@emailjs/browser": "^3.4.0",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
+    "css-doodle": "^0.25.1",
     "gatsby": "^3.12.1",
     "gatsby-background-image": "^1.5.3",
     "gatsby-cli": "^4.5.2",

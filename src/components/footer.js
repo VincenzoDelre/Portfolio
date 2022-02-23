@@ -50,22 +50,18 @@ const Footer = ({title}) => {
                     
                 `}
             
-            > 
-                    <EnlaceHome
-                        to='/'
-                        
-                    >
-                        <h1 css={css`
-                            margin:1rem;
-                            color: #000;
-                        `}> WEBS<span css={css`color:red`}>WU</span> </h1>
-                    </EnlaceHome>
-
-
-                <Navegacion />
-
-
+            >
                 
+                <Navegacion />
+                
+                <EnlaceHome
+                    to='/'    
+                >
+                    <h1 css={css`
+                        margin:1rem;
+                        color: #000;
+                    `}> WEBS<span css={css`color:red`}>WU</span> </h1>
+                </EnlaceHome>
 
             </div>
         </nav>

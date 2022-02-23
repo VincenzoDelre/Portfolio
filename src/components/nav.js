@@ -19,7 +19,7 @@ const NavLink = styled(Link)`
     text-decoration: none;
     
     padding:1rem;
-    font-family: 'PT Sans', sans-serif;
+    //font-family: 'PT Sans', sans-serif;
     margin-right:1rem;
 
     &::last-of-type{

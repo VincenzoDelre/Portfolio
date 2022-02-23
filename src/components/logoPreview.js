@@ -83,7 +83,7 @@ const LogoPreview = ({logo}) => {
             >
                 <h3
                     css={css`
-                        font-size: 2rem;
+                        //font-size: 2rem;
                         text-align: center;
                         color:#fff;
                     `}

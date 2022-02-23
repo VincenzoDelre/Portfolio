@@ -9,7 +9,7 @@ const BackgroundSection = ({ className, children }) => {
   const data = useStaticQuery(
     graphql`
     query MyQuery {
-        file(relativePath: {eq: "rombos.jpg"}) {
+        file(relativePath: {eq: "water.jpg"}) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1920) {
               srcSetWebp
@@ -39,9 +39,11 @@ const BackgroundSection = ({ className, children }) => {
 
 const StyledBackgroundSection = styled(BackgroundSection)`
   width: 100%;
+  height: 100vh;
   background-position: bottom center;
   background-repeat: repeat-y;
   background-size: cover;
+  filter:grayscale(100%);
   
 `
   

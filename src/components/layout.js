@@ -27,7 +27,7 @@ const Layout = (props) => {
                 
                 body {
                     color: #fff;
-                    font-family:'Montserrat', sans-serif;
+                    font-family: 'Josefin Slab', serif;
                     
                     display: flex;
                     justify-content: center;
@@ -43,7 +43,7 @@ const Layout = (props) => {
                     }
                     @media(min-width:768px){
                         font-size:18px;
-                        font-size:1.8rem;
+                        font-size:2.3rem;
                         line-height:1.5;
                     }
                     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+26,ededed+100;White+3D+%231 */
@@ -57,14 +57,15 @@ const Layout = (props) => {
                 }
                 h1, h2, h3 {
                     margin: 0;
-                    line-height:1.5;
+                    line-height:2;
                 }
                 h1, h2{
                     font-family: 'Codystar', cursive;
                     color: #000;
                 }
                 h3 {
-                    font-family:'Montserrat', sans-serif;
+                    font-family: 'Josefin Slab', serif;
+                    font-size: 700;
                 }
                 ul{
                     list-style: none;
@@ -84,7 +85,9 @@ const Layout = (props) => {
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
             <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet"/>
             <link href="https://fonts.googleapis.com/css2?family=Arizonia&family=Codystar&family=Montserrat&family=Poiret+One&display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@200;300;500;700&display=swap" rel="stylesheet"></link>
             <script src="https://kit.fontawesome.com/424ad1444b.js" crossorigin="anonymous"></script>
+            <script src="https://unpkg.com/css-doodle@0.25.1/css-doodle.min.js"></script>
         </Helmet>
 
         

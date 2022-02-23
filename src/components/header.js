@@ -25,13 +25,13 @@ const Header = () => {
     
     const scroll = useScroll();
     
-    const divHeader = {
-        position:`fixed`
-    }
-    
     // const divHeader = {
-    //     position: (scroll.currentScrollY>window.innerHeight) ? 'fixed' : 'absolute' 
-    //  }
+    //     position:`fixed`
+    // }
+    
+    const divHeader = {
+        position: (scroll.currentScrollY>window.innerHeight) ? 'fixed' : 'absolute' 
+     }
     
     
     return ( 

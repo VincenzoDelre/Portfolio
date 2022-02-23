@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useRef, useState } from 'react';
+// import axios from 'axios';
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
-
+import emailjs from '@emailjs/browser';
 
 const Campo = styled.div`
     display: flex;
@@ -59,42 +59,55 @@ export const Contacto = () => {
       setMessage(e.target.value)
   }
   
-  
-  const formSubmit= async (e)=>{
-  e.preventDefault();
-  
-  try {
-      
-  let data = {
-      name,
-      email,
-      message
-  }
-  
-  setBool(true);
-  
-  const res = await axios.post(`/api/contact`, data);
-  
-  if(name.length===0 || email.length===0 || message.length===0){
+  const form = useRef();
 
-    setBool(false);
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_vnv2toq', 'template_8ox59g9', form.current, 'user_CZKqbheYaEZ7hbLtCgmdP')
+      .then((result) => {
+          alert('Message sent correctly');
+          
+      }, (error) => {
+          alert(error.message);
+      });
+      e.target.reset();
+    }
+  // const formSubmit= async (e)=>{
+  // e.preventDefault();
   
-  }
+  // try {
+      
+  // let data = {
+  //     name,
+  //     email,
+  //     message
+  // }
+  
+  // setBool(true);
+  
+  // const res = await axios.post(`/api/contact`, data);
+  
+  // if(name.length===0 || email.length===0 || message.length===0){
+
+  //   setBool(false);
+  
+  // }
   
   
-  else if(res.status===200){
-    setBool(false);
-    setName('');
-    setEmail('');
-    setMessage('')
+  // else if(res.status===200){
+  //   setBool(false);
+  //   setName('');
+  //   setEmail('');
+  //   setMessage('')
   
-  }
+  // }
   
-  } catch (err) {
-     console.log(err); 
-  }
+  // } catch (err) {
+  //    console.log(err); 
+  // }
   
-  }    
+  // }    
     return (
       <>
       
@@ -112,7 +125,7 @@ export const Contacto = () => {
         
           
           
-            <form  onSubmit={formSubmit} >
+            <form ref={form} onSubmit={sendEmail}>
                 <div css={css`
 
                   display: flex;
@@ -123,17 +136,17 @@ export const Contacto = () => {
                       text-align: left;
                   }
                 `}>
-                  <p>Si quieres realizar una consulta, puedes hacerlo completando este formulario</p>
+                  <p>Do you have any question? Get in touch! I'll be happy to reply</p>
                 </div>
                 <Campo>
 
-                  <CampoLabel>Nombre</CampoLabel>
+                  <CampoLabel>Name</CampoLabel>
                   <CampoField 
                     type="text" 
 
                     onChange={handleName}
                     value={name}
-
+                    name='name'
 
                     />
                 </Campo>
@@ -145,34 +158,37 @@ export const Contacto = () => {
                     type="email" 
                     onChange={handleEmail}
                     value={email}
+                    name='email'
                   
                   />
                 </Campo>
                 <Campo>
-                    <CampoLabel>Mensaje</CampoLabel>
+                    <CampoLabel>Message</CampoLabel>
                   <CampoTextarea
 
                     rows="7"
                     type="text" 
                     onChange={handleMessage}
                     value={message}
-                  
-                    name="message"
+                    name='message'
+                    
                   />
                 </Campo>
 
               <div className="send-btn">
                 <button 
                   type="submit"
+                  value="Send"
                   css={css`
                     background-color:#ccc;
                     color:#fff;
                     border-radius:1rem;
                     border:1px solid #aaa;
+                    padding-top: 0.5rem;
                     &:hover{
                       background-color: #bbb;
                       border:1px solid #000;
-                    }`}>Enviar </button>
+                    }`}>Send </button>
               </div>
 
           </form>
