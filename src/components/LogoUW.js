@@ -26,7 +26,7 @@ export function LogoUW() {
           width: 10%; */
           align-items: flex-start;
           `} 
-           src="../images/logo.png" 
+           src="../images/logo3.png" 
            alt="logo"
        />
     

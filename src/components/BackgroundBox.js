@@ -7,11 +7,11 @@ import styled from "@emotion/styled"
 import BackgroundImage from 'gatsby-background-image'
 
 
-const BackgroundSection = ({ className, children }) => {
-  const data = useStaticQuery(
+const BackgroundBox = ({ className, children }) => {
+  const data2 = useStaticQuery(
     graphql`
-    query MyQuery {
-        file(relativePath: {eq: "water1.png"}) {
+    query MyQuery6 {
+        file(relativePath: {eq: "water5.png"}) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1920) {
               srcSetWebp
@@ -23,15 +23,15 @@ const BackgroundSection = ({ className, children }) => {
   )
 
   // Set ImageData.
-  const imageData = data.file.childImageSharp.fluid
-  console.log(data.file.childImageSharp.fluid)
+  const imageData2 = data2.file.childImageSharp.fluid
+  console.log(data2.file.childImageSharp.fluid)
 
   return (
     
     <BackgroundImage
       Tag="section"
       className={className}
-      fluid={imageData}
+      fluid={imageData2}
       backgroundColor={`#040e18`}
     >
         
@@ -42,32 +42,15 @@ const BackgroundSection = ({ className, children }) => {
   )
 }
 
-const BackgroundHero = styled(BackgroundSection)`
+const BackgroundContent = styled(BackgroundBox)`
   width: 100%;
-  height: 120vh;
+  height: auto;
   background-position: bottom center;
   background-repeat: repeat-y;
   background-size: cover;
   
-  
-  clip-path: polygon(
-    0 0, /* left top */
-    100% 0, /* right top */ 
-    100% 96.5%, /* right bottom */
-    0 100% /* left bottom */
-    
-  );
-  @media(min-width:768px){
-    clip-path: polygon(
-    0 0, /* left top */
-    100% 0, /* right top */ 
-    100% 86%, /* right bottom */
-    0 100% /* left bottom */
-    
-  );
-  }
 
   
 `
   
-export default BackgroundHero
+export default BackgroundContent

@@ -81,6 +81,7 @@ const ProyectoPreview = ({proyecto}) => {
                     css={css`
                         //font-size: 2rem;
                         text-align: center;
+                        color:#fff;
                     `}
                 >
                     {titulo}</h3>

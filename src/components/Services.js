@@ -61,7 +61,11 @@ export const Services = () => {
         <div css={css`
                 position: relative;
                 height: 60vh;
+                margin: 5rem auto;
                 
+                @media(min-width:767px){
+                  margin: 10rem auto;
+                }
                 
                 
                 `}>

@@ -4,44 +4,16 @@ import styled from '@emotion/styled';
 import { css, keyframes } from '@emotion/react';
 import useScroll from '../hooks/useScroll';
 import scrollTo from 'gatsby-plugin-smoothscroll';
-import StyledBackgroundSection from "../components/Background";
+
 import BackgroundImage from 'gatsby-background-image';
 import { StaticImage } from "gatsby-plugin-image"
-import { Base } from './Base';
 
+import Header from './header';
+import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
+import MouseParticles from "react-mouse-particles";
 
+import BackgroundHero from '../components/Background';
 
-
-//const ImageBackground = styled(BackgroundImage)
-// const ImageBackground = styled.div`  
-//     height:100vh;
-//     position: relative;
-//     overflow: hidden;
-//     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#959595+0,010101+0,0a0a0a+53,ff3838+87,1b0100+100 */
-//     background: rgb(149,149,149); /* Old browsers */
-//     background: -moz-linear-gradient(left,  rgba(149,149,149,1) 0%, rgba(1,1,1,1) 0%, rgba(10,10,10,1) 53%, rgba(255,56,56,1) 87%, rgba(27,1,0,1) 100%); /* FF3.6-15 */
-//     background: -webkit-linear-gradient(left,  rgba(149,149,149,1) 0%,rgba(1,1,1,1) 0%,rgba(10,10,10,1) 53%,rgba(255,56,56,1) 87%,rgba(27,1,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
-//     background: linear-gradient(to right,  rgba(149,149,149,1) 0%,rgba(1,1,1,1) 0%,rgba(10,10,10,1) 53%,rgba(255,56,56,1) 87%,rgba(27,1,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-//     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b0100',GradientType=1 ); /* IE6-9 */
-
-    
-    
-// `;
-
-// const cambiocolor = keyframes
-// `
-//     0% { 
-
-//      }
-//     50% { 
-
-//     }
-//     100% { 
-        
-//      }
-    
-// }
-// `
 
 const Content = styled.div`
     position: absolute;
@@ -53,26 +25,13 @@ const Content = styled.div`
     display:flex;
     justify-content: left;
     align-items: center;
+    
 `;
 
-// const Overlay = styled.div`
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     left: 0;
-//     bottom: 0;
-//     background: #fff center no-repeat;
-//     background-size: cover;
-//     z-index: 0;
-//     opacity: 0;
-    
-
-// `;
-
 const TextoImagen = styled.div`
-    /* align-content:center; */
-    /* text-align: center; */
+
     position: absolute;
+    bottom: 7%;
     border-radius: 2rem;
     color: transparent;
     /* border: 1px solid #000; */
@@ -85,6 +44,7 @@ const TextoImagen = styled.div`
     
     @media (min-width: 768px) {
             width: auto;
+            bottom: auto;
         }
     
     h1{
@@ -102,12 +62,6 @@ const TextoImagen = styled.div`
             font-size: 3rem;
         }
     }
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+26,ededed+100;White+3D+%231 */
-    /* background: rgb(255,255,255); Old browsers */
-    /* background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 26%, rgba(237,237,237,1) 100%); FF3.6-15 */
-    /* background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 26%,rgba(237,237,237,1) 100%); Chrome10-25,Safari5.1-6 */
-    /* background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 26%,rgba(237,237,237,1) 100%); W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); IE6-9 */
     
 `;
 
@@ -120,9 +74,11 @@ const LateralDiv = styled.div`
     justify-content: left;
     align-items: center;
     padding:3rem;
-    @media(min-width: 768px) {
+    margin-bottom: 10vh;
+    @media (min-width: 768px){
+        margin-bottom: 20vh;
         flex-direction: row;
-    }
+    }  
     
 `;
 
@@ -136,8 +92,8 @@ const LinkBoton = styled.button`
     padding: 0.2rem 0.5rem;
     text-decoration: none;
     font-size: 1.8rem;
-    filter: blur(1px);
-    
+    /* filter: blur(1px); */
+    font-weight: 200;
     @media(min-width:768px){
         font-size: 3rem;
         padding:3rem 3rem;
@@ -169,7 +125,7 @@ const Logo = styled(BackgroundImage)`
     margin-right: auto;
     left: 0;
     right: 0;
-    border: 3px solid white;
+    z-index:99;
     height: 15vh;
     width: 80%;
     background-size: contain;
@@ -181,24 +137,94 @@ const Logo = styled(BackgroundImage)`
 `;
 
 const Titulo = styled.div`
-    display: flex;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-right: auto;
     margin-left: auto;
+    margin-top: auto;
+    
     left: 0;
     right: 0;
     bottom: 0;
-    border: 3px solid white;
-    height: 15vh;
-    width: 80%;
-    background-size: contain;
+    top:0;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-bottom: 20vh;
+    @media (min-width: 768px){
+        margin-bottom: 20vh;}  
+`
+
+
+
+const UniqueWeb = styled.div`
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    left: 0;
+    right: 0;
+    top:5%;
+    text-align: center;
+    width:15%;
+    font-size: 2.3rem;
+    font-family: 'Montserrat', sans-serif;
+    
+    
+    
+    
     @media(min-width:768px){
-    height: 15vh;
-    width: 60vh;
+        top:7%;
+        width:5%;
+        font-size: 3.3rem;
+        
     }
 
 `
 
+
+const LinkBoton2 = styled.button`
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    border:none;
+    color: #000;
+    background: #fff;
+    padding: 1rem 2.5rem 0.5rem 2.5rem;
+    text-decoration: none;
+    font-size: 1.4rem;
+    
+    
+    @media(min-width:768px){
+        font-size: 1.8rem;
+        padding:1.2rem 4rem 0.8rem 4rem;
+    }
+
+
+&:hover {
+  
+    color: #fff;
+    background: #000;
+    text-decoration: none;
+}
+
+`;
+
+const Boton2 = styled.nav`
+    position: relative;
+    margin: 0.1rem;
+    padding: 0.2rem;
+    border-radius: 10px;
+    text-decoration: none;
+
+`;
 
 
 
@@ -245,22 +271,52 @@ const ImagenHero = ({children}) => {
         // <ImageBackground css={css`
         //     animation: ${cambiocolor} 10s infinite;
         // `}> 
-        <StyledBackgroundSection>
+        
+        <BackgroundHero css={css`
+            filter:grayscale(70%);
+            
+        `}
+        >
 
-            <Content > 
-
-                <Logo
-                    tag='section'  
+            <Content
+                id='hero'> 
+            
+                <UniqueWeb style={divMov}>
+                    <h4>Unique webs</h4>
+                </UniqueWeb>
+                <Header />
+                {/* <MouseParallaxContainer>
+                    <MouseParallaxChild factorX={0.05} factorY={0.10} > */}
+                    <Titulo style={divMov}>
                     
-                    alt='hero' 
-                    fluid={imageData} 
-                    fadeIn="soft"
-                    >
-                         {children}
-                 
-                </Logo>  
-                <Titulo>
-                    
+                    <MouseParticles
+                      g={-1}
+                      num={1}
+                      radius={6}
+                      life={1.3}
+                      v={0.7}
+                      color={["#000", "#fff", "#00f"]}
+                      alpha={0.2}
+                      level={6}
+                    />
+                    <Logo
+                        tag='section'  
+                        alt='hero' 
+                        fluid={imageData} 
+                        fadeIn="soft"
+                        
+                        >
+                             {children}
+                    </Logo> 
+                    {/* </MouseParallaxChild>  
+                    </MouseParallaxContainer> */}
+                     
+                    <p>Front-end Developer</p>
+                    <Boton2>
+                        <LinkBoton2 onClick={() => scrollTo('#contacto', 'center')}>
+                            CONTACT ME
+                        </LinkBoton2>
+                    </Boton2>
                 </Titulo>
 
 
@@ -272,16 +328,10 @@ const ImagenHero = ({children}) => {
             
                 <TextoImagen  style={divMov}>
                     
-                    {/* <h1>WEBS
-                        <span css={css`color:red`}>UW</span>
-                    </h1>
-                    <p>Turn ideas into
-                        {<span css={css`color:red`}> unique webs</span>}
-                    </p> */}
                     <LateralDiv>
                         <Boton>
                             <LinkBoton onClick={() => scrollTo('#servicios', 'center')}>
-                                Tools
+                                Services
                             </LinkBoton>
                         </Boton>
                         <Boton>
@@ -290,25 +340,19 @@ const ImagenHero = ({children}) => {
                             </LinkBoton>
                         </Boton>
                         <Boton>
-                            <LinkBoton onClick={() => scrollTo('#contacto', 'center')}>
-                                Contact
+                            <LinkBoton onClick={() => scrollTo('#tools', 'center')}>
+                                Tools
                             </LinkBoton>
                         </Boton>
                     
                     </LateralDiv>
                     
                 </TextoImagen>
-                
+               
             </Content>
             
-        </StyledBackgroundSection>
-            /* <TextoImagen2 style={divMov2}>
-                        <Lapis />
-                </TextoImagen2> */
-
-            /* <Overlay></Overlay> */
-
-        /* </ImageBackground> */
+        </BackgroundHero>
+            
         
      );
 }

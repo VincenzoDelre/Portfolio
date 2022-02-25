@@ -120,6 +120,7 @@ export const Contacto = () => {
         flex-direction: column;
         margin:3rem auto;
         width: 90%;
+        color: #fff;
         `}>
         
         
@@ -131,12 +132,13 @@ export const Contacto = () => {
                   display: flex;
                   margin-bottom: 3rem;
                   flex-direction: column;
+                  
 
                   h2{
                       text-align: left;
                   }
                 `}>
-                  <p>Do you have any question? Get in touch! I'll be happy to reply</p>
+                  <p>Get in touch! I'll be happy to reply</p>
                 </div>
                 <Campo>
 
@@ -181,7 +183,7 @@ export const Contacto = () => {
                   value="Send"
                   css={css`
                     background-color:#ccc;
-                    color:#fff;
+                    color:#000;
                     border-radius:1rem;
                     border:1px solid #aaa;
                     padding-top: 0.5rem;

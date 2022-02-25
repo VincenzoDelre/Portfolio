@@ -1,7 +1,7 @@
 import React from "react"
-import ReactDOM from "react-dom";
 
-import { css } from "@emotion/react"
+
+import { css, keyframes } from "@emotion/react"
 import styled from "@emotion/styled"
 
 
@@ -22,8 +22,8 @@ import Contacto from "../components/Contacto";
 
 import useHerramientas from "../hooks/useHerramientas";
 import { HerramientaPreview } from "../components/HerramientaPreview";
+import BackgroundHero from "../components/Background";
 
-// import StyledBackgroundSection from "../components/Background";
 
 
 
@@ -46,6 +46,22 @@ const ListadoProyectos = styled.ul`
     align-items: flex-start;
   }
 
+`;
+
+const H2 = styled.h2`
+
+            
+            font-size: 3.5rem;
+            margin: 3.5rem auto;
+            
+            text-align: center;
+
+            @media (min-width: 768px) {
+              font-size: 5rem;
+              margin: 5rem auto;
+              
+            }
+          
 `;
 
 const ListadoHerramientas = styled.ul`
@@ -73,19 +89,22 @@ const ListadoHerramientas = styled.ul`
 const DiagonalBox = styled.div`
 
   position: relative;
-  transform: skewY(-6deg);
+  transform: skewY(-5deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
   @media(min-width:768px){
-    padding: 2rem;
+    
   }
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0a0a09+0,000000+100 */
-  background: rgb(10,10,9); /* Old browsers */
+  /* background: rgb(10,10,9); Old browsers */
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,828282+100 */
-  background: rgb(255,255,255); /* Old browsers */
-  background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 0%, rgba(130,130,130,1) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(130,130,130,1) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg,  rgba(255,255,255,1) 0%,rgba(130,130,130,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#828282',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  /* background: rgb(255,255,255); Old browsers */
+  /* background: -moz-linear-gradient(-45deg,  rgba(255,255,255,1) 0%, rgba(130,130,130,1) 100%); FF3.6-15 */
+  /* background: -webkit-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(130,130,130,1) 100%); Chrome10-25,Safari5.1-6 */
+  /* background: linear-gradient(135deg,  rgba(255,255,255,1) 0%,rgba(130,130,130,1) 100%); W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#828282',GradientType=1 ); IE6-9 fallback on horizontal gradient */
 
   
 
@@ -101,17 +120,19 @@ const DiagonalBox = styled.div`
 
 `;
 
+
 const Content = styled.div`
 
   position: relative;
   transform: skewY(6deg);
   max-width: 1200px;
-  margin: 4rem auto;
-  padding: 4rem auto;
+  /* margin: 4rem auto;
+  padding: 4rem auto; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: auto;
 `;
 
 const IndexPage = () => {
@@ -136,69 +157,157 @@ const IndexPage = () => {
       }
       `);
 
-    
+      const typewriter = keyframes`
+      from { width: 0 },
+      to { width: 45% }
+  `
+  
+  const blinkCursor = keyframes`
+      from, to { border-color: transparent},
+      50% { border-color: white; }  
+  ` 
+      
   return (
     <>
     
-
     <ImagenHero />
-    
-    
+      
     <Layout>
 
-      
+    
+
+                  <h1 css={css`
+                    @media(max-width:767px){
+                        color:#000;
+                        margin: 3.5rem auto;
+            
+                        text-align: center;
+                        
+                    }
+                    @media(min-width:768px){
+                        color:#000;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        font-size: 5rem;
+                        margin: 0rem auto 6rem auto;
+                        border-right: .12em solid white;
+                        letter-spacing: .0.7em;
+                        text-align: center;
+                        animation:
+
+                            ${typewriter} 3s steps(40, end),
+                            ${blinkCursor} .65s step-end infinite;
+                        
+                        
+                    }
+                        `} >Hi, I'm Vin</h1>
+              
 
       <DiagonalBox>
-        {/* <StyledBackgroundSection> */}
+        <BackgroundHero css={css`
+            height: auto;
+            clip-path: polygon(
+            0 0, /* left top */
+            100% 0, /* right top */ 
+            100% 100%, /* right bottom */
+            0 100% /* left bottom */);
+
+
+            @media(min-width:768px){
+            clip-path: polygon(
+            0 0, /* left top */
+            100% 0, /* right top */ 
+            100% 100%, /* right bottom */
+            0 100% /* left bottom */);
+            }
+    
+  
+            
+          `}>
           <Content>
             <ContenidoInicio/>
           </Content>
-        {/* </StyledBackgroundSection> */}
+          </BackgroundHero>
       </DiagonalBox> 
+      
 
-      
-      
+     
+
       {/* SERVICIOS */}
+      <H2 
+            id='servicios'  
+          >
+            Services
+      </H2> 
       
-      <h2 
-        id='servicios'
-        css={css`
-        font-size: 3.5rem;
-        margin: 5rem auto;
-        text-align: center;
-        
-        @media (min-width: 768px) {
-          font-size: 5rem;
-        }
-
-      `}>
-        Servic<span css={css`color:red`}>es</span>
-      </h2>
+      
       
 
       <DiagonalBox>
-        <Content>
-          <Services/>
-        </Content>
+        <BackgroundHero css={css`
+            height: auto;
+            
+            clip-path: polygon(
+            0 0, /* left top */
+            100% 0, /* right top */ 
+            100% 100%, /* right bottom */
+            0 100% /* left bottom */);
+
+
+            @media(min-width:768px){
+            clip-path: polygon(
+            0 0, /* left top */
+            100% 0, /* right top */ 
+            100% 100%, /* right bottom */
+            0 100% /* left bottom */);
+            }
+    
+  
+            
+          `}>
+          <Content>
+            <Services/>
+          </Content>
+          </BackgroundHero>
       </DiagonalBox>
       
 
 
       {/* PROYECTOS */}
-      <h2 
-        id='proyectos'
-        css={css`
-        font-size: 3.5rem;
-        margin: 5rem auto;
-        text-align: center;
-        @media (min-width: 768px) {
-          font-size: 5rem;
-        }
-        `}>
-        Proyec<span css={css`color:red`}>ts</span>
-      </h2>
-      <DiagonalBox >
-        <Content>
+      
+             
+          <H2
+            id='proyectos'
+            >
+            Proyects
+          </H2>
+          
+      
+      <DiagonalBox>
+        <BackgroundHero css={css`
+            height: auto;
+            clip-path: polygon(
+            0 0, /* left top */
+            100% 0, /* right top */ 
+            100% 100%, /* right bottom */
+            0 100% /* left bottom */);
+
+
+            @media(min-width:768px){
+            clip-path: polygon(
+            0 0, /* left top */
+            100% 0, /* right top */ 
+            100% 100%, /* right bottom */
+            0 100% /* left bottom */);
+            }
+    
+  
+            
+          `}>
+          <Content>
+          
+
+           
 
           <ListadoProyectos css={css`
             width: 80vw;
@@ -216,27 +325,44 @@ const IndexPage = () => {
             )) }
           </ListadoProyectos>
             
-        </Content>
-      </DiagonalBox>
+          </Content>
+          </BackgroundHero>
+      </DiagonalBox> 
 
+      
+            {/* LOGOS */}
+            <H2
+                id='logos'
+                >
+                  Logos
+            </H2>
+          
 
-      {/* LOGOS */}
-      <h2 
-        id='logos'
-        css={css`
-        font-size: 3.5rem;
-        margin: 5rem auto;
-        text-align: center;
-        @media (min-width: 768px) {
-          font-size: 5rem;
-        }
-      `}>
-        Log<span css={css`color:red`}>os</span>
-      </h2>
 
       <DiagonalBox>
-        
+        <BackgroundHero css={css`
+            height: auto;
+            clip-path: polygon(
+            0 0, /* left top */
+            100% 0, /* right top */ 
+            100% 100%, /* right bottom */
+            0 100% /* left bottom */);
+
+
+            @media(min-width:768px){
+            clip-path: polygon(
+            0 0, /* left top */
+            100% 0, /* right top */ 
+            100% 100%, /* right bottom */
+            0 100% /* left bottom */);
+            }
+    
+  
+            
+          `}>
           <Content>
+          
+
           
           <ListadoProyectos css={css`
             width: 80vw;
@@ -254,31 +380,43 @@ const IndexPage = () => {
               ))}
           </ListadoProyectos> 
 
-        </Content>
-        
-    </DiagonalBox>
+          </Content>
+          </BackgroundHero>
+      </DiagonalBox> 
 
+      <H2 
+          id='tools'
+          >  
+            Tools
+        </H2>
+        <DiagonalBox>
+        <BackgroundHero css={css`
+            height: auto;
+            clip-path: polygon(
+            0 0, /* left top */
+            100% 0, /* right top */ 
+            100% 100%, /* right bottom */
+            0 100% /* left bottom */);
+
+
+            @media(min-width:768px){
+            clip-path: polygon(
+            0 0, /* left top */
+            100% 0, /* right top */ 
+            100% 100%, /* right bottom */
+            0 100% /* left bottom */);
+            }
     
+  
+            
+          `}>
+          <Content>
+        
+        
+        <ListadoHerramientas css={css`
+          width: 80vw;
           
-    <h2 
-       
-       css={css`
-       font-size: 3.5rem;
-       margin: 5rem auto;
-       text-align: center;
-       @media (min-width: 768px) {
-         font-size: 5rem;
-       }
-     `}>
-       Too<span css={css`color:red`}>ls</span>
-     </h2>
-     <DiagonalBox>
-       <Content>
-         
-         <ListadoHerramientas css={css`
-           width: 80vw;
-           
-           margin: 8rem;
+          margin: 8rem;
          `}>
          
            { herramientas.map( herramienta =>(
@@ -288,33 +426,48 @@ const IndexPage = () => {
              />
              ))}
          </ListadoHerramientas> 
-      </Content>
-    </DiagonalBox>
+         </Content>
+          </BackgroundHero>
+      </DiagonalBox> 
     
-    {/* CONTACTO */}
-    <h2 
-        id='contacto'
-        css={css`
-        font-size: 3.5rem;
-        margin: 5rem auto;
-        text-align: center;
-        @media (min-width: 768px) {
-          font-size: 5rem;
-        }
-      `}>
-        Conta<span css={css`color:red`}>ct</span>
-    </h2>
-
-
-    <DiagonalBox>
-      <Content>
-        <Contacto/>
-      </Content>
-    </DiagonalBox>
     
+            {/* CONTACTO */}
+        <H2 
+            id='contacto'
+            >
+            Contact
+        </H2>
+
+        <DiagonalBox>
+        <BackgroundHero css={css`
+            height: auto;
+            clip-path: polygon(
+            0 0, /* left top */
+            100% 0, /* right top */ 
+            100% 100%, /* right bottom */
+            0 100% /* left bottom */);
+            
+
+            @media(min-width:768px){
+            clip-path: polygon(
+            0 0, /* left top */
+            100% 0, /* right top */ 
+            100% 100%, /* right bottom */
+            0 100% /* left bottom */);
+            }
+    
+  
+            
+          `}>
+          <Content>
+
+      
+            <Contacto/>
+          </Content>
+        </BackgroundHero>
+      </DiagonalBox> 
+
     </Layout>
-
-    
     
     </>
   )

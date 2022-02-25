@@ -1,6 +1,6 @@
 import React from "react"
 import Footer from "./footer"
-import Header from "./header"
+
 import { Global, css  } from "@emotion/react"
 import { Helmet } from "react-helmet"
 import useSeo from "../hooks/useSeo"
@@ -27,7 +27,7 @@ const Layout = (props) => {
                 
                 body {
                     color: #fff;
-                    font-family: 'Josefin Slab', serif;
+                    font-family: 'Raleway', sans-serif;
                     
                     display: flex;
                     justify-content: center;
@@ -46,13 +46,7 @@ const Layout = (props) => {
                         font-size:2.3rem;
                         line-height:1.5;
                     }
-                    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+26,ededed+100;White+3D+%231 */
-                    background: rgb(255,255,255); /* Old browsers */
-                    background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 26%, rgba(237,237,237,1) 100%); /* FF3.6-15 */
-                    background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 26%,rgba(237,237,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
-                    background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 26%,rgba(237,237,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=1 ); /* IE6-9 */
-
+                    
                     
                 }
                 h1, h2, h3 {
@@ -60,11 +54,11 @@ const Layout = (props) => {
                     line-height:2;
                 }
                 h1, h2{
-                    font-family: 'Codystar', cursive;
+                    font-family: 'Montserrat', cursive;
                     color: #000;
                 }
                 h3 {
-                    font-family: 'Josefin Slab', serif;
+                    font-family: 'Montserrat', sans-serif;
                     font-size: 700;
                 }
                 ul{
@@ -85,13 +79,13 @@ const Layout = (props) => {
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
             <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet"/>
             <link href="https://fonts.googleapis.com/css2?family=Arizonia&family=Codystar&family=Montserrat&family=Poiret+One&display=swap" rel="stylesheet"/>
-            <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@200;300;500;700&display=swap" rel="stylesheet"></link>
+            <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@200;300;500;700&family=Raleway:wght@200;400;600&display=swap" rel="stylesheet"/>
             <script src="https://kit.fontawesome.com/424ad1444b.js" crossorigin="anonymous"></script>
-            <script src="https://unpkg.com/css-doodle@0.25.1/css-doodle.min.js"></script>
+            
         </Helmet>
 
         
-        <Header/>
+        
             {props.children}
         <Footer 
             title={title}

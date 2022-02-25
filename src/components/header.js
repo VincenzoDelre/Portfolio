@@ -15,9 +15,17 @@ const EnlaceHome = styled(Link)`
     @media (min-width: 768px){
         font-size:2.4rem}
         
-        `; 
+`; 
 
+const DivHeader = styled.div`
+        position:fixed;
+        background-color:transparent;
+        display:flex;
+        flex-direction:column;
+        justify-content:end;
+        align-items:center;
 
+`
 
 
 
@@ -25,9 +33,10 @@ const Header = () => {
     
     const scroll = useScroll();
     
-    const divHeader = {
-        position:`fixed`
-    }
+    // const divHeader = {
+    //     position:`fixed`,
+        
+    // }
     
     // const divHeader = {
     //     position: (scroll.currentScrollY>window.innerHeight) ? 'fixed' : 'absolute' 
@@ -39,51 +48,51 @@ const Header = () => {
             css={css`
                 padding: 1rem;
                 position: relative;
+                
                 padding: 2rem;
                 z-index: 5;
                 @media (min-width: 768px){
                     padding:5rem}
             `}
         >
-        <nav style={divHeader} css={css`
-            
-            top: 0;
-            left: 0;
-            background-color: #fff;
-            height:100%;
-            
-                
-            `}> 
-            
-            <div
-                css={css`
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    display:flex;
-                    align-items: center;
-                    justify-content: space-between;
+            <DivHeader  css={css`
+
+                bottom: 0;
+                left: 0;
+                background-color: transparent;
+                margin-bottom: 20vh;`}
+                > 
+
+                <div
+                    css={css`
+                        max-width: 1200px;
+                        margin: 0;
+                        display:flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        @media (min-width: 768px){
+                            margin: 2rem;}
+                    `}
+
+                > 
+                        {/* <EnlaceHome
+                            to='/'
+
+                        >
+                            <h1 css={css`
+                                margin:1rem;
+                                color: #000;
+                            `}> @</h1>
+                        </EnlaceHome> */}
+
+
+                    <Navegacion />
+
+
                     
-                `}
-            
-            > 
-                    <EnlaceHome
-                        to='/'
-                        
-                    >
-                        <h1 css={css`
-                            margin:1rem;
-                            color: #000;
-                        `}> WEBS<span css={css`color:red`}>UW</span> </h1>
-                    </EnlaceHome>
 
-
-                <Navegacion />
-
-
-                
-
-            </div>
-        </nav>
+                </div>
+            </DivHeader>
         </header>
     );
 }

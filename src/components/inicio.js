@@ -54,15 +54,7 @@ const ContenidoInicio = () => {
     const image = getImage(imagen);
     //console.log(imagen.fluid)
 
-    const typewriter = keyframes`
-        from { width: 0 },
-        to { width: 45% }
-    `
     
-    const blinkCursor = keyframes`
-        from, to { border-color: transparent},
-        50% { border-color: white; }  
-    ` 
     
     
 
@@ -70,56 +62,38 @@ const ContenidoInicio = () => {
         <div css={css`
             margin:5rem;
             width: 100vw;
-            
+            text-align: center;
+
+            @media(min-width:768px){
+            margin-bottom: 10rem;
+            }
             `}>
             
             <TextoInicio>
-                <div css={css`
-                    border-radius: 50%;
+            <div css={css`
+                    
                     
                     overflow: hidden;
                 `}>
-                    <GatsbyImage image={image} alt='alt per favor'/>
+                    <GatsbyImage 
+                        image={image} 
+                        alt='alt per favor'
+                        css={css`
+                            filter:opacity(0.2);
+                            border-radius: 50%;
+                        `}/>
                 </div>
 
-                <div css={css`
-                    display: flex;
-                    justify-content:space-around;
-                    align-items: center;
-                    flex-direction: column;
+                
                     
                     
-                `}>
-                    
-                    <h2 css={css`
-                    @media(max-width:767px){
-                        color:#fff;
-                        
-                    }
-                    @media(min-width:768px){
-                        color:#fff;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        
-                        margin: 0 auto;
-                        border-right: .12em solid white;
-                        letter-spacing: .0.7em;
-                        
-                        animation:
 
-                            ${typewriter} 3s steps(40, end),
-                            ${blinkCursor} .65s step-end infinite;
-                        
-                        
-                    }
-                        `} >Hi, I'm Vincenzo</h2>
-
-                    <p css={css`
-                        text-align:center;
-                        color: #fff;
-
-                        `}>{contenido}</p>
-                </div>
+                <p css={css`
+                    text-align:center;
+                    color: #fff;
+                    `}>{contenido}
+                </p>
+            
             </TextoInicio>
 
 
