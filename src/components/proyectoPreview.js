@@ -7,9 +7,9 @@ import { Link } from 'gatsby';
 const Boton = styled(Link)`
     margin-top: 2rem;
     padding: 1rem;
-    background-color: white;
+    background-color: transparent;
     width: 100%;
-    color: #000;
+    color: #fff;
     display: block;
     text-decoration: none;
     text-transform: uppercase;
@@ -36,12 +36,14 @@ const ProyectoPreview = ({proyecto}) => {
     //console.log(slug)
     const image = getImage(imagen);
 
+    
     return ( 
         <div
             css={css`
                 /* border:1px solid #e1e1e1; */
                 margin-bottom: 2rem;
                 border-radius: 1rem;
+                width: 100%;
                 @media(min-width:768px){
                     
                     
@@ -52,7 +54,7 @@ const ProyectoPreview = ({proyecto}) => {
         >
             <div
                 css={css`
-                border:2px solid #e1e1e1;
+                
                 margin-bottom: 2rem;
                 border-radius: 2rem;
                 @media(min-width:768px){
@@ -67,10 +69,54 @@ const ProyectoPreview = ({proyecto}) => {
                     css={css`
                     object-fit: cover;
                     padding:1rem;
-                    `}
+                    width: 220%;
+                    height: 220%;
+                    
+                    filter: grayscale(80%);
+                    &:hover{
+                        filter:grayscale(0%);
+                    
+                        -webkit-animation: kenburns-top 5s ease-out both;
+	                    animation: kenburns-top 5s ease-out both;
+
+                        @-webkit-keyframes kenburns-top {
+                          0% {
+                            -webkit-transform: scale(1) translateY(0);
+                                    transform: scale(1) translateY(0);
+                            -webkit-transform-origin: 50% 16%;
+                                    transform-origin: 50% 16%;
+                          }
+                          100% {
+                            -webkit-transform: scale(1.25) translateY(-15px);
+                                    transform: scale(1.25) translateY(-15px);
+                            -webkit-transform-origin: top;
+                                    transform-origin: top;
+                          }
+                        }
+                        @keyframes kenburns-top {
+                          0% {
+                            -webkit-transform: scale(1) translateY(0);
+                                    transform: scale(1) translateY(0);
+                            -webkit-transform-origin: 50% 16%;
+                                    transform-origin: 50% 16%;
+                          }
+                          100% {
+                            -webkit-transform: scale(1.25) translateY(-15px);
+                                    transform: scale(1.25) translateY(-15px);
+                            -webkit-transform-origin: top;
+                                    transform-origin: top;
+                          }
+                        }
+
+                     }
+                                        
+                `}
+
                 /> 
+            
             </DivProyecto>
-            </div>
+            <Boton to={slug}>More info...</Boton>
+            {/* </div>
             
             <div
                 css={css`
@@ -87,8 +133,7 @@ const ProyectoPreview = ({proyecto}) => {
                     {titulo}</h3>
                 {/* <p>{contenido}</p> */}
 
-                <Boton to={slug}>More info...</Boton>
-            </div>
+            </div> 
 
 
         </div>

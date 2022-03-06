@@ -48,6 +48,20 @@ const BackgroundTitle = styled(BackgroundBody)`
   background-position: bottom center;
   background-repeat: repeat-y;
   background-size: cover;
+  clip-path: polygon(
+  0 0, /* left top */
+  100% 0, /* right top */ 
+  100% 100%, /* right bottom */
+  0 100% /* left bottom */);
+
+
+  @media(min-width:768px){
+  clip-path: polygon(
+  0 0, /* left top */
+  100% 0, /* right top */ 
+  100% 100%, /* right bottom */
+  0 100% /* left bottom */);
+  }
   
   
   

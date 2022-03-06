@@ -4,8 +4,6 @@ import React from 'react';
 import { css } from '@emotion/react';
 import Layout from './layout'; 
 import styled from '@emotion/styled';  
-import StyledBackgroundSection from './Background';
-
 
 export const query = graphql`
 
@@ -29,7 +27,6 @@ const Contenido = styled.div`
       justify-content: space-between;
       vertical-align: center;
       
-      height: 100vh;
     `;
 
 const ProyectoTemplate = ({data: { allDatoCmsProyecto: {nodes}}}) => {

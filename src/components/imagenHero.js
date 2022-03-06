@@ -1,17 +1,12 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
 import styled from '@emotion/styled';
+import { graphql, useStaticQuery } from 'gatsby';
 import { css, keyframes } from '@emotion/react';
 import useScroll from '../hooks/useScroll';
 import scrollTo from 'gatsby-plugin-smoothscroll';
-
 import BackgroundImage from 'gatsby-background-image';
-import { StaticImage } from "gatsby-plugin-image"
-
 import Header from './header';
-import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
 import MouseParticles from "react-mouse-particles";
-
 import BackgroundHero from '../components/Background';
 
 
@@ -75,6 +70,7 @@ const LateralDiv = styled.div`
     align-items: center;
     padding:3rem;
     margin-bottom: 10vh;
+    font-family: 'Montserrat', sans-serif;
     @media (min-width: 768px){
         margin-bottom: 20vh;
         flex-direction: row;
@@ -136,26 +132,26 @@ const Logo = styled(BackgroundImage)`
 
 `;
 
-const Titulo = styled.div`
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: auto;
-    
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top:0;
-    font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    margin-bottom: 20vh;
-    @media (min-width: 768px){
-        margin-bottom: 20vh;}  
-`
+    const Titulo = styled.div`
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: auto;
+        
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top:0;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        margin-bottom: 20vh;
+        @media (min-width: 768px){
+            margin-bottom: 20vh;}  
+    `
 
 
 
@@ -180,6 +176,7 @@ const UniqueWeb = styled.div`
     
     
     
+    
     @media(min-width:768px){
         top:7%;
         width:5%;
@@ -188,6 +185,7 @@ const UniqueWeb = styled.div`
     }
 
 `
+
 
 
 const LinkBoton2 = styled.button`
@@ -274,7 +272,23 @@ const ImagenHero = ({children}) => {
         
         <BackgroundHero css={css`
             filter:grayscale(70%);
+            height: 120vh;
+            clip-path: polygon(
+              0 0, /* left top */
+              100% 0, /* right top */ 
+              100% 96.5%, /* right bottom */
+              0 100% /* left bottom */
             
+            );
+            @media(min-width:768px){
+              clip-path: polygon(
+              0 0, /* left top */
+              100% 0, /* right top */ 
+              100% 86%, /* right bottom */
+              0 100% /* left bottom */
+                
+            );
+            }
         `}
         >
 

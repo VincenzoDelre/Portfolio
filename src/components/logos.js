@@ -28,7 +28,6 @@ const Contenido = styled.div`
       justify-content: space-between;
       vertical-align: center;
       
-      height: 100vh;
     `;
 
 const LogoTemplate = ({data: { allDatoCmsLogo: {nodes}}}) => {

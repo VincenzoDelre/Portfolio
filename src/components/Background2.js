@@ -7,11 +7,11 @@ import styled from "@emotion/styled"
 import BackgroundImage from 'gatsby-background-image'
 
 
-const BackgroundSection = ({ className, children }) => {
+const BackgroundSection2 = ({ className, children }) => {
   const data = useStaticQuery(
     graphql`
-    query MyQuery {
-        file(relativePath: {eq: "water1.png"}) {
+    query query5 {
+        file(relativePath: {eq: "water.jpg"}) {
           childImageSharp {
             fluid(quality: 90, maxWidth: 1920) {
               srcSetWebp
@@ -26,35 +26,29 @@ const BackgroundSection = ({ className, children }) => {
   const imageData = data.file.childImageSharp.fluid
   console.log(data.file.childImageSharp.fluid)
 
-      
-
-  
   return (
     
-      <BackgroundImage
-        Tag="section"
-        className={className}
-        fluid={imageData}
-        backgroundColor={`#040e18`}
-      >
-
-          {children}
-      </BackgroundImage>
+    <BackgroundImage
+      Tag="section2"
+      className={className}
+      fluid={imageData}
+      backgroundColor={`#040e18`}
+    >
+        
+        {children}
+    </BackgroundImage>
     
     
   )
 }
 
-const BackgroundHero = styled(BackgroundSection)`
+const BackgroundBody = styled(BackgroundSection2)`
   width: 100%;
-  
-  background-position: center center fixed;
-  background-repeat: no-repeat;
+  height: 100vh;
+  background-position: bottom center;
+  background-repeat: repeat-y;
   background-size: cover;
-  display: flex;
-  height: auto;
-  
-  
+
 `
   
-export default BackgroundHero
+export default BackgroundBody  

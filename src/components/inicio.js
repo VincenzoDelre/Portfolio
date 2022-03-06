@@ -60,12 +60,13 @@ const ContenidoInicio = () => {
 
     return ( 
         <div css={css`
-            margin:5rem;
+            
             width: 100vw;
             text-align: center;
 
             @media(min-width:768px){
             margin-bottom: 10rem;
+            margin:5rem;
             }
             `}>
             

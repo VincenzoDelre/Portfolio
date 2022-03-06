@@ -44,7 +44,7 @@ export const Contacto = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   
-  const [bool, setBool] = useState(false);
+  // const [bool, setBool] = useState(false);
   
   // handle inputs
   const handleName = (e)=>{
@@ -119,8 +119,9 @@ export const Contacto = () => {
         align-items: center;
         flex-direction: column;
         margin:3rem auto;
-        width: 90%;
+        
         color: #fff;
+        
         `}>
         
         
@@ -128,7 +129,7 @@ export const Contacto = () => {
           
             <form ref={form} onSubmit={sendEmail}>
                 <div css={css`
-
+                  
                   display: flex;
                   margin-bottom: 3rem;
                   flex-direction: column;
@@ -138,7 +139,7 @@ export const Contacto = () => {
                       text-align: left;
                   }
                 `}>
-                  <p>Get in touch! I'll be happy to reply</p>
+                  <p>Get in touch! I'll be happy to reply, have a nice day </p>
                 </div>
                 <Campo>
 
@@ -187,9 +188,12 @@ export const Contacto = () => {
                     border-radius:1rem;
                     border:1px solid #aaa;
                     padding-top: 0.5rem;
+                    font-size: 2rem;
+                    padding: 0.5rem 2rem;
                     &:hover{
                       background-color: #bbb;
-                      border:1px solid #000;
+                      color:#fff;
+                      
                     }`}>Send </button>
               </div>
 
