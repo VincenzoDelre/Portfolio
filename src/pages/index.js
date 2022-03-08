@@ -6,7 +6,7 @@ import styled from "@emotion/styled"
 
 
 import Layout from "../components/layout"
-import ImagenHero from "../components/imagenHero"
+
 import ContenidoInicio from "../components/inicio"
 
 import useProyecto from "../hooks/useProyecto"

@@ -281,7 +281,7 @@ const Back = () =>  {
               --button-default-border-radius:22px;
               --button-horizontal-padding:10px;
               --button-primary-color:white;
-              --button-primary-color-dark:white;
+              --button-primary-color-dark:'#393939';
               --button-primary-color-light:'#808008';
               --button-primary-color-hover:'black';
               

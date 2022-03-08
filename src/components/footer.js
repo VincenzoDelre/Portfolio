@@ -32,9 +32,9 @@ const Logo = styled(BackgroundImage)`
         height:10rem;
         width: 14rem;
     }
-    &:hover{
-        background-color: #555;
-    }
+        /* &:hover{
+            background-color: #555;
+        } */
 `
 
 const Footer = ({title, children}) => {
@@ -66,7 +66,7 @@ const Footer = ({title, children}) => {
                 z-index: 5;
                 
                 @media (min-width: 768px){
-                    padding-top:5rem;
+                    margin-top:5rem;
                 }
             `}>
         <nav css={css`
@@ -91,6 +91,16 @@ const Footer = ({title, children}) => {
             >
                 
                 <Navegacion />
+
+                <p
+            css={css`
+                text-align:center;
+                color: #fff;
+                
+                margin: 0;
+                padding: 1rem;
+            `}
+        >{title}. All rights reserved {year} &copy;</p>
                 
                 {/* <EnlaceHome
                     to='/'    
@@ -115,15 +125,7 @@ const Footer = ({title, children}) => {
 
             </div>
         </nav>
-        <p
-            css={css`
-                text-align:center;
-                color: #aaa;
-                background-color: #fff;
-                margin: 0;
-                padding: 1rem;
-            `}
-        >{title}. All rights reserved {year} &copy;</p>  
+          
         </footer>
         
         </>
