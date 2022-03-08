@@ -59,9 +59,12 @@
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
-  "browserslist": [
-    "defaults",
-    "not IE 11",
-    "maintained node versions"
-  ]
+  
+    
+    "browserslist": [
+      "last 1 version",
+      "> 1%",
+      "IE 10"
+    ]
+  
 }
