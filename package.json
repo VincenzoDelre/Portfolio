@@ -36,6 +36,7 @@
     "swiper": "^7.0.5"
   },
   "devDependencies": {
+    "gatsby-plugin-netlify": "^4.1.0",
     "patch-package": "^6.4.7",
     "prettier": "2.3.2"
   },

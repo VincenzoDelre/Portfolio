@@ -8,7 +8,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-emotion',
     `gatsby-plugin-react-helmet`,
-    
+    'gatsby-plugin-netlify',
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -32,6 +32,7 @@ module.exports = {
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
+    
     `gatsby-plugin-gatsby-cloud`,
     {
       resolve: 'gatsby-source-datocms',
