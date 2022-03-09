@@ -23,6 +23,7 @@ import useHerramientas from "../hooks/useHerramientas";
 import { HerramientaPreview } from "../components/HerramientaPreview";
 import BackgroundHero from "../components/Background";
 import Back from "../components/BackgroundBox"
+import ImagenHero from "../components/imagenHero"
 
 
 
@@ -149,8 +150,8 @@ const IndexPage = () => {
   return (
     <>
     
-    <Back />
-    
+    {/* <Back /> */}
+    <ImagenHero/>
     
     <Layout>
 
