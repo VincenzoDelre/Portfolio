@@ -50,5 +50,47 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
       })
   });
+  exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+    if (stage === "build-html" || stage === "develop-html") {
+      actions.setWebpackConfig({
+        module: {
+          rules: [
+            {
+              test: /react-water-wave/,
+              use: loaders.null(),
+            },
+          ],
+        },
+      })
+    }
+  };
+  exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+    if (stage === "build-html" || stage === "develop-html") {
+      actions.setWebpackConfig({
+        module: {
+          rules: [
+            {
+              test: /react-mouse-particles/,
+              use: loaders.null(),
+            },
+          ],
+        },
+      })
+    }
+  };
+  exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+    if (stage === "build-html" || stage === "develop-html") {
+      actions.setWebpackConfig({
+        module: {
+          rules: [
+            {
+              test: /react-awesome-button/,
+              use: loaders.null(),
+            },
+          ],
+        },
+      })
+    }
+  };
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { graphql, useStaticQuery } from 'gatsby';
-import { css, keyframes } from '@emotion/react';
+import { css } from '@emotion/react';
 import useScroll from '../hooks/useScroll';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import BackgroundImage from 'gatsby-background-image';
