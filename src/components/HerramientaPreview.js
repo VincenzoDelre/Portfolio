@@ -1,7 +1,7 @@
 import React from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { css } from '@emotion/react';
-import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
+//import { MouseParallaxContainer, MouseParallaxChild } from "react-parallax-mouse";
 
 export const HerramientaPreview = ( {herramienta} ) => {
 
@@ -10,8 +10,8 @@ export const HerramientaPreview = ( {herramienta} ) => {
 
     return (
         
-        <MouseParallaxContainer>
-        <MouseParallaxChild factorX={0.05} factorY={0.05} >
+        // <MouseParallaxContainer>
+        // <MouseParallaxChild factorX={0.05} factorY={0.05} >
         <div css={css`
             display: flex;
             justify-content: center;
@@ -32,7 +32,7 @@ export const HerramientaPreview = ( {herramienta} ) => {
             </div>
             
         </div>
-        </MouseParallaxChild>  
-        </MouseParallaxContainer>
+        // </MouseParallaxChild>  
+        // </MouseParallaxContainer>
     )
 }
