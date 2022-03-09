@@ -92,5 +92,47 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       })
     }
   };
+  exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+    if (stage === "build-html" || stage === "develop-html") {
+      actions.setWebpackConfig({
+        module: {
+          rules: [
+            {
+              test: /react-router-dom/,
+              use: loaders.null(),
+            },
+          ],
+        },
+      })
+    }
+  };
+  exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+    if (stage === "build-html" || stage === "develop-html") {
+      actions.setWebpackConfig({
+        module: {
+          rules: [
+            {
+              test: /swiper/,
+              use: loaders.null(),
+            },
+          ],
+        },
+      })
+    }
+  };
+  exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+    if (stage === "build-html" || stage === "develop-html") {
+      actions.setWebpackConfig({
+        module: {
+          rules: [
+            {
+              test: /react-dom/,
+              use: loaders.null(),
+            },
+          ],
+        },
+      })
+    }
+  };
 }
 
