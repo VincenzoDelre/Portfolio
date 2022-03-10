@@ -9,7 +9,7 @@
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "css-doodle": "^0.25.1",
-    "gatsby": "^3.12.1",
+    "gatsby": "^4.0.0",
     "gatsby-background-image": "^1.5.3",
     "gatsby-cli": "^4.5.2",
     "gatsby-plugin-emotion": "^6.12.0",
